@@ -1,8 +1,12 @@
 # .github/workflows/douban.yml
 name: douban
 on: 
+  workflow_dispatch:
   schedule:
   - cron: "30 * * * *"
+
+permissions:
+  contents: write
 
 jobs:
   douban:
@@ -10,21 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: movie
       uses: lizheming/doumark-action@master
       with:
-        id: lizheming
+        id: x1024daniel
         type: movie
+        status: done
         format: csv
         dir: ./data/douban
 
     - name: music
       uses: lizheming/doumark-action@master
       with:
-        id: lizheming
+        id: x1024daniel
         type: music
+        status: done
         format: csv
         dir: ./data/douban
   
