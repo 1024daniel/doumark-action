@@ -25,6 +25,15 @@ jobs:
         format: csv
         dir: ./data/douban
 
+    - name: book
+      uses: lizheming/doumark-action@master
+      with:
+        id: x1024daniel
+        type: book
+        status: done
+        format: csv
+        dir: ./data/douban
+
     - name: music
       uses: lizheming/doumark-action@master
       with:
