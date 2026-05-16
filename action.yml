@@ -3,7 +3,7 @@ author: "Austin Lee"
 description: "Douban movie/book/music marked data sync to csv or notion action"
 
 inputs:
-  id:
+  id: "x1024daniel"
     description: "Your douban user_id"
     required: true
   type:
@@ -18,7 +18,7 @@ inputs:
     description: "Douban data store format, enum value：`csv`, `json`, `notion`, default `csv`"
     default: csv
     required: false
-  dir:
+  dir: "./"
     description: "Target where douban data sync to. It's a file path for `csv` and `json` format, and a notion database id for `notion` format."
     default: ./
     required: true
