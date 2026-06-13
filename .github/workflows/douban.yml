@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: douban-sync
+  cancel-in-progress: false
+
 jobs:
   douban:
     name: Douban mark data sync
@@ -42,6 +46,9 @@ jobs:
         status: done
         format: csv
         dir: ./data/douban
+
+    - name: Cache posters and deduplicate CSV files
+      run: ruby scripts/process_douban_csv.rb
   
     - name: Commit
       uses: EndBug/add-and-commit@v8
