@@ -21,9 +21,10 @@ See [action.yml](action.yml) for more detailed information.
 The repository workflow also caches poster images under
 `data/douban/posters`. CSV poster URLs point to the cached GitHub raw files
 and include a content hash, avoiding intermittent failures and stale images
-from the external Douban image proxy. Existing posters are refreshed every 30
-days by default. Set `DOUBAN_POSTER_REFRESH_DAYS` on the processing step to
-change that interval.
+from the external Douban image proxy. Set `DOUBAN_ID` on the processing step so
+the script can retrieve direct cover URLs from Douban. Existing posters are
+refreshed every 30 days by default; use `DOUBAN_POSTER_REFRESH_DAYS` to change
+that interval.
 
 ```yml
 # .github/workflows/douban.yml

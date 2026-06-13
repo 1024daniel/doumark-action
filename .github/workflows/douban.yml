@@ -48,7 +48,9 @@ jobs:
         dir: ./data/douban
 
     - name: Cache posters and deduplicate CSV files
-      run: ruby scripts/process_douban_csv.rb
+      env:
+        DOUBAN_ID: x1024daniel
+      run: ruby --disable-gems scripts/process_douban_csv.rb
   
     - name: Commit
       uses: EndBug/add-and-commit@v8
